@@ -136,7 +136,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with :truncation, {:except => %w[spatial_ref_sys]}
     # Use transactions for tests
     DatabaseCleaner.strategy = :transaction
-
+    FactoryBot::create(:test_app_configuration)
   end
 
   config.before(:each) do
