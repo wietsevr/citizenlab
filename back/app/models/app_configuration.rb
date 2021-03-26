@@ -24,7 +24,7 @@ class AppConfiguration < ApplicationRecord
 
   before_validation :validate_missing_feature_dependencies
 
-  after_save :update_tenant, if: :tenant_sync_enabled
+  after_save :update_tenant, if: :tenant_sync_enabled if CitizenLab.ee?
   after_initialize :custom_initialization
 
   module Settings
