@@ -154,11 +154,9 @@ if File.exists?('../citizenlab.config.ee.json')
   # requires activerecord < 6.0.
   gem 'apartment', github: 'influitive/apartment', branch: 'development'
 end
- 
+
 cl_config["modules"].each do |m, enabled|
   if enabled && File.exists?("engines/#{m}")
     gem m.split('/').last, path: "engines/#{m}"
   end
 end
-
-

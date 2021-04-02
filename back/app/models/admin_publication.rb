@@ -53,3 +53,5 @@ class AdminPublication < ApplicationRecord
     self.children_allowed = false if publication_type == 'Project'
   end
 end
+
+AdminPublication.include(AdminPublicationsVisibility::Extensions::AdminPublication)
